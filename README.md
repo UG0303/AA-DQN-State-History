@@ -1,12 +1,11 @@
 # Beyond Memoryless Control: Attention-Augmented DQN with State History Windows
 
 **NTU Deep Reinforcement Learning Mini-Conference 2026**  
-Anonymous Author · National Taiwan University
+Udit Goyal · National Taiwan University (Exchange Student)
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-orange.svg)](https://pytorch.org/)
 [![Gymnasium](https://img.shields.io/badge/Gymnasium-0.29-green.svg)](https://gymnasium.farama.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
@@ -55,16 +54,20 @@ AA-DQN-State-History/
 ├── frame_stack_dqn.py      # FrameStack MLP baseline
 ├── extra_experiments.py    # LR control + extra seeds
 ├── plot_results.py         # Generate all figures from JSON results
+├── sanity_check.py         # Verify agents run correctly
 ├── results/
 │   ├── results.json            # DQN vs AA-DQN (3 seeds)
 │   ├── ablation_k.json         # K ablation (K=1,2,4,8 x 3 seeds)
 │   ├── framestack_results.json # FrameStack baseline
 │   └── extra_results.json      # LR control + extra seeds
-└── figures/
-    ├── fig1_training_curves.png
-    ├── fig2_eval_curves.png
-    ├── fig3_ablation_k.png
-    └── fig4_full_comparison.png
+├── figures/
+│   ├── fig1_training_curves.png
+│   ├── fig2_eval_curves.png
+│   ├── fig3_ablation_k.png
+│   └── fig4_full_comparison.png
+└── paper/
+    ├── neurips_2026.tex
+    └── AA_DQN_NTU_MiniConf2026.pdf
 ```
 
 ---
@@ -126,25 +129,9 @@ The non-monotonic K sweep (K=2 best for both methods, K=4 worst for AA-DQN) reve
 
 ## Hardware & Runtime
 
-- **Hardware:** CPU (no GPU required)
-- **Training time:** ~20 min per seed per agent
-- **Full reproduction:** ~8 hours (all scripts sequentially)
+- **Hardware:** NVIDIA RTX 3050 GPU (Windows 11)
+- **Training time:** ~1–2 hours per seed per agent
+- **Full reproduction (all scripts):** ~12–15 hours total
+- Note: CPU fallback used for long runs due to CUDA stability on Windows
 
 ---
-
-## Citation
-
-```bibtex
-@article{aadqn2026,
-  title={Beyond Memoryless Control: Attention-Augmented DQN with State History Windows},
-  author={Anonymous},
-  journal={NTU Deep Reinforcement Learning Mini-Conference 2026},
-  year={2026}
-}
-```
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
